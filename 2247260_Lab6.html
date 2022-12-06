@@ -690,19 +690,19 @@
           createCookie("First Name", document.forms.signup.fn.value,1);
           createCookie("Last Name", document.forms.signup.ln.value,1);
           createCookie("Phone Number", document.forms.signup.ph.value,1);
-          document.getElementById("hide").value = document.getElementById("ps").value;
-		      var hash = CryptoJS.MD5(pass);
+          alert(document.forms.signup.mail.value);
           sessionStorage.setItem("Email Address", document.forms.signup.mail.value);
-          sessionStorage.setItem("Password", hash);
-          localStorage.setItem("Date of Birth", document.forms.signup.bd.value);
+          sessionStorage.setItem("Password", document.getElementById("ps").value);
+          window.localStorage.setItem("Date of Birth", document.forms.signup.bd.value);
         
         }
         
-        // $(window).onbeforeunload(function() {
-        //   eraseCookie("First Name");
-        //   eraseCookie("Last Name");
-        //   eraseCookie("Phone Number");
-        // });
+        window.onbeforeunload  = function() {
+          eraseCookie("First Name");
+           eraseCookie("Last Name");
+           eraseCookie("Phone Number");
+    };
+      
       </script>
   </body>
   </html>
